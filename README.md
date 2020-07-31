@@ -140,19 +140,22 @@ Alternative functions are in the jupyter notebook. However I did not utilize the
 ## Final Model
 After taking RFE to select features, I iteratively removed the feature with the highest p-value as long as it contributed to the goodness of fit (Using adjusted R2). Led to a final model with Adjust R2 = 1.56 / R2 = 0.167. Final features and coefficients are reported here. (For a full summary, please refer to Jupyter notebook.)  
 
-| Variable  | Coef | p |
-| ------------- | ------------- |
-| Intercept | 6.9096 | 0.000 |
-| disability | 3.2099 | 0.000 |
-| cancer | 3.7632 | 0.003 |
-| smoker_3 | 0.8871 | 0.018 | 
-| age_sc | -0.6583 | 0.002 |
-| cancer_d_yr_sc | -1.0153 | 0.006 | 
-| n_cocaine_sc | 0.5218 | 0.002 | 
-| education_sc | -0.4724  | 0.003 | 
-| NeverMarriedXAge | 0.8294 | 0.025 |
+| Variable  | Coef | p |  
+| ------------- | ------------- |  
+| Intercept | 6.9096 | 0.000 |  
+| disability | 3.2099 | 0.000 |  
+| cancer | 3.7632 | 0.003 |  
+| smoker_3 | 0.8871 | 0.018 |   
+| age_sc | -0.6583 | 0.002 |  
+| cancer_d_yr_sc | -1.0153 | 0.006 |   
+| n_cocaine_sc | 0.5218 | 0.002 |   
+| education_sc | -0.4724  | 0.003 |   
+| NeverMarriedXAge | 0.8294 | 0.025 |  
  
-
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 ### Residuals 
 Liberally speaking, our residual is approximately normal, but not quite. Further investigation is necessary.  
 ![residual distribution](/PNG/resid_dist.png)  
