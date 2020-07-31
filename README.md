@@ -4,7 +4,7 @@ This repository contains a code exploring the National Health and Nutrition Exam
 I am primarily interested in learning what are the key factors that contribute to the progression of depressive symptoms in order to provide a guideline in future suicide prevention research. 
 
 # Structure
-- 001.Linear_Regression_NHANES_data.ipynb : jupyter notebook containing entire code in the order it was initially processed.
+- 001.Linear_Regression_NHANES_data.ipynb : jupyter notebook containing entire code in the order it was processed.
 
 
 # Data Collection
@@ -16,22 +16,22 @@ Initially this dataset contained approximately 8000 participants.
 
 ![percentage of answers in population](/PNG/p_answers_pop.png)
 
-(quesitons are shown the reversed order in the graphic)
-Q1 - Have little interest in doing things
-Q2 - Feeling down, depressed, or hopeless
-Q3 - Trouble sleeping or sleeping too much
-Q4 - Feeling tired or having little energy
-Q5 - Poor appetite or overeating
-Q6 - Feeling bad about yourself
-Q7 - Trouble concentrating on things
-Q8 - Moving or speaking slow or too fast or fidgety and restless
-Q9 - Thought you would be better off dead or of hurting yourself
-Q10 - Difficulty these problems have caused (not at all, somewhat, very, extremely)
+(quesitons are shown the reversed order in the graphic)  
+Q1 - Have little interest in doing things  
+Q2 - Feeling down, depressed, or hopeless  
+Q3 - Trouble sleeping or sleeping too much  
+Q4 - Feeling tired or having little energy  
+Q5 - Poor appetite or overeating  
+Q6 - Feeling bad about yourself  
+Q7 - Trouble concentrating on things  
+Q8 - Moving or speaking slow or too fast or fidgety and restless  
+Q9 - Thought you would be better off dead or of hurting yourself  
+Q10 - Difficulty these problems have caused (not at all, somewhat, very, extremely)  
 
 # Dependent Variable
 MHI_Index: In order to quantify one's mental health or depressive symptoms, I created a mental health index (MHI), which is a cumulative score of ten depression screener questionnaires. I subsetted the dataset to only people who have answered to have been bothered by feeling depressed or hopeless at any degree, because I'm interested in learning how mild depressive symptoms progress to be fatal.
 
-![MHI_distribution](/PNG/MHI_distribution.png)  
+![MHI_distribution](/PNG/MHI_distributionn.png)  
 Distribution of MHI within a subset
 
 # Independent Variables
@@ -139,7 +139,7 @@ Alternative functions are in the jupyter notebook. However I did not utilize the
 
 ## Final Model
 ### Residuals 
-Liberally speaking, our residual is approximately normal.  
+Liberally speaking, our residual is approximately normal, but not quite. Further investigation is necessary.  
 ![residual distribution](/PNG/resid_dist.png)  
 
 High variance, but generally its homoscedasticity is a-okay. Slight over-estimation on both end.
@@ -148,26 +148,26 @@ High variance, but generally its homoscedasticity is a-okay. Slight over-estimat
 
 ## Conclusion
 
+Overall, 
 
 1. Chronic illness such as cancer is a key predictor of frequent experience of depressive symptoms. Having cancer contributed to approximately 3.8 points increase in MHI. One way to get this much score increase is going from experiencing no symptom to experiencing one of the symptoms all the time.
+
 ![cancer](/PNG/cancer.png)  
 
-
 2. On a similar line, having a disability was also a key predictor of frequent experience of depressive symptoms, contributing to approximately 3.2 points increase in MHI.
+
 ![disability](/PNG/disability.png)  
 
-
 3. Being an only adult in the household also contributes to 2.7 point increase in MHI, after taking account for household size.
-![n_adults](/PNG/n_adults.png)  
 
+![n_adults](/PNG/n_adults.png)  
 
 4. Next important key factor is the use of substances. Being a smoker attributes to one point increase in MHI.
 
-![residual plot](/PNG/resid_plot.png)  
+![smoker](/PNG/smoker.png)  
 
 5. Higher average number of daily cocaine use increase contributes to higher MHI.
 
-![residual plot](/PNG/resid_plot.png)  
-
 6. Additionally education level are also important key factors of MHI. (Higher education, the lower MHI score.)
-![residual ](/PNG/n_adults.png)  
+
+![education](/PNG/education.png)  
