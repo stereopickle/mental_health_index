@@ -138,6 +138,20 @@ Adjusted R2: 0.147
 Alternative functions are in the jupyter notebook. However I did not utilize these methods in the evaluation.  
 
 ## Final Model
+After taking RFE to select features, I iteratively removed the feature with the highest p-value as long as it contributed to the goodness of fit (Using adjusted R2). Led to a final model with Adjust R2 = 1.56 / R2 = 0.167. Final features and coefficients are reported here. (For a full summary, please refer to Jupyter notebook.)  
+
+| Variable  | Coef | p |
+| ------------- | ------------- |
+| Intercept | 6.9096 | 0.000 |
+| disability | 3.2099 | 0.000 |
+| cancer | 3.7632 | 0.003 |
+| smoker_3 | 0.8871 | 0.018 | 
+| age_sc | -0.6583 | 0.002 |
+| cancer_d_yr_sc | -1.0153 | 0.006 | 
+| n_cocaine_sc | 0.5218 | 0.002 | 
+| education_sc | -0.4724  | 0.003 | 
+ | NeverMarriedXAge0.8294	0.369	2.248	0.025
+
 ### Residuals 
 Liberally speaking, our residual is approximately normal, but not quite. Further investigation is necessary.  
 ![residual distribution](/PNG/resid_dist.png)  
@@ -148,26 +162,28 @@ High variance, but generally its homoscedasticity is a-okay. Slight over-estimat
 
 ## Conclusion
 
-Overall, 
-
-1. Chronic illness such as cancer is a key predictor of frequent experience of depressive symptoms. Having cancer contributed to approximately 3.8 points increase in MHI. One way to get this much score increase is going from experiencing no symptom to experiencing one of the symptoms all the time.
-
-![cancer](/PNG/cancer.png)  
-
-2. On a similar line, having a disability was also a key predictor of frequent experience of depressive symptoms, contributing to approximately 3.2 points increase in MHI.
+Mental health is a complex issue it is very difficult to narrow down all the factors that may contribute to one’s mental health progression, and the resulting model has a very low goodness of fit. But below I report some of the meaningful findings (p < 0.5) to guide suicide prevention research.  
+1. Having a disability was also a key predictor of frequent experience of depressive symptoms, contributing to approximately 3.2 points increase in MHI.
 
 ![disability](/PNG/disability.png)  
 
-3. Being an only adult in the household also contributes to 2.7 point increase in MHI, after taking account for household size.
+2. Chronic illness such as cancer is a key predictor of frequent experience of depressive symptoms. Having cancer contributed to approximately 3.8 points increase in MHI. One way to get this much score increase is going from experiencing no symptom to experiencing one of the symptoms all the time. 
 
-![n_adults](/PNG/n_adults.png)  
+![cancer](/PNG/cancer.png)  
 
-4. Next important key factor is the use of substances. Being a smoker attributes to one point increase in MHI.
+3. Moreover, each standard deviation increase in year of diagnosis (shorter time to the current time) attributed to 1 point decrease in MHI. 
+
+4. Next important key factor is the use of substances. Being a smoker attributes to 0.9 point increase in MHI.
 
 ![smoker](/PNG/smoker.png)  
 
-5. Higher average number of daily cocaine use increase contributes to higher MHI.
+5. Higher average number of daily cocaine use increase also attributed significantly to higher MHI (coef = 0.52).
 
-6. Additionally education level are also important key factors of MHI. (Higher education, the lower MHI score.)
+
+6. Next to year of diagnosis of cancer, increase of age without ever married was the next highest predictor of increase in MHI.
+
+![never_married](/PNG/never_married.png)  
+
+7. Additionally education level are also important key factors of MHI. (Higher education, the lower MHI score.)
 
 ![education](/PNG/education.png)  
