@@ -29,7 +29,7 @@ Q9 - Thought you would be better off dead or of hurting yourself
 Q10 - Difficulty these problems have caused (not at all, somewhat, very, extremely)  
 
 # Dependent Variable
-MHI_Index: In order to quantify one's mental health or depressive symptoms, I created a mental health index (MHI), which is a cumulative score of ten depression screener questionnaires. I subsetted the dataset to only people who have answered to have been bothered by feeling depressed or hopeless at any degree, because I'm interested in learning how mild depressive symptoms progress to be fatal.
+MHI_Index: In order to quantify one's mental health or depressive symptoms, I created a mental health index (MHI), which is a cumulative score of ten depression screener questionnaires. I subsetted the dataset to only people who have answered to have been bothered by feeling depressed or hopeless at any degree, because I'm interested in learning how mild depressive symptoms progress to be fatal. Final dataset included 1,222 people.  
 
 ![MHI_distribution](/PNG/MHI_distributionn.png)  
 Distribution of MHI within a subset
