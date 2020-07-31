@@ -150,13 +150,14 @@ After taking RFE to select features, I iteratively removed the feature with the 
 | cancer_d_yr_sc | -1.0153 | 0.006 | 
 | n_cocaine_sc | 0.5218 | 0.002 | 
 | education_sc | -0.4724  | 0.003 | 
- | NeverMarriedXAge0.8294	0.369	2.248	0.025
+| NeverMarriedXAge | 0.8294 | 0.025 |
+ 
 
 ### Residuals 
 Liberally speaking, our residual is approximately normal, but not quite. Further investigation is necessary.  
 ![residual distribution](/PNG/resid_dist.png)  
 
-High variance, but generally its homoscedasticity is a-okay. Slight over-estimation on both end.
+High variance, but generally its homoscedasticity is a-okay. Slight over-estimation on higher end.
 ![residual plot](/PNG/resid_plot.png)  
 
 
