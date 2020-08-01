@@ -1,45 +1,50 @@
-# mental_health_index
+# Depressed to Suicide Ideation 
+## Preliminary Guideline for Suicide Prevention Research
 
-This repository contains a code exploring the National Health and Nutrition Examination Survey Data from 2017 - 2018.  
-I am primarily interested in learning what are the key factors that contribute to the progression of depressive symptoms in order to provide a guideline in future suicide prevention research. 
+This repository contains a process exploring the National Health and Nutrition Examination Survey Data from 2017 - 2018 to find factors that attribute to progression of depressive symptoms. The goal of this project to provide some guideline in future suicide prevention effort. 
 
 # Structure
 - 001.Linear_Regression_NHANES_data.ipynb : jupyter notebook containing entire code in the order it was processed.
 
+# Problem
+According to National Institute of Mental Health (NIMH), in 2017, suicide was the tenth leading cause of death in US and the second among age 10 to 34. Yet, suicide is also one of the most stigmatized topic. People avoid talking about suicidal ideation, making it even harder to learn what makes people go from feeling unmotivated or depressed to having suicidal ideation.
+ 
+source: NIMH website (https://www.nimh.nih.gov/health/statistics/suicide)
 
-# Data Collection
-Selection of data was downloaded from CDC website. (https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017)  
-NHANES provides separate XPT files for each sub-sections. I only used the demographics, medical condition, substance use related data. But the collection code will iterate through all files in the folder, if one wants to expand the dataset.
-Codebooks are distributed across different section of this website.  
+# Data 
+The National Health and Nutrition Examination Survey (NHANES), which is a part of Centers for Disease Control and Prevention, collects and publishes extensive amount of interview and medical exam from a population of noninstitutionalized civilians living in US. 
 
-Initially this dataset contained approximately 8000 participants. 
+In order to accurately represent the population, the NHANES oversample from underrepresented population each cycle. This dataset specifically oversampled hispanics, non-hispanic black and Asians, people at or below 185% of poverty guideline, and people aged 80 and older.
+
+The NHANES website provides separate SAS XPT files for each sub-sections. In this analysis, I concatenated 21 of these sub-sections from topics such as demographics, medical condition, and substance use.  
+
+source: NHANES website (https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017)
+
+A total of 8704 participants completed interviews and medical exams between 2017 and 2018. 
+As I'm interested in learning how mild depressive symptoms progress to be fatal, I narrowed down the dataset to only include people who have said that they have experienced feeling bothered by feeling depressed or hopeless recently. This resulted in a total of 1222 people, which is 14% of the total data. 
+
+
+# Target Variable: Mental Health Index (MH_Index)
+In order to quantify one's mental health or depressive symptoms, I created a variable called **mental health index (MHI)**, which is a cumulative number of answers to ten depression screener questionnaires. Each question was rated on 4-point scale, indicating how often they feel bothered by some of these depressive symptoms in past 2 weeks. Final MHI (Mental Health Index) ranges from 0 to 30. Below graph shows percent of each answer out of all people who answered at least half of these questionnaire (*n* = 5087). (A few missing values were inferred from answers to other highest correlated question.) 
 
 ![percentage of answers in population](/PNG/p_answers_pop.png)
 
-(quesitons are shown the reversed order in the graphic)  
-Q1 - Have little interest in doing things  
-Q2 - Feeling down, depressed, or hopeless  
-Q3 - Trouble sleeping or sleeping too much  
-Q4 - Feeling tired or having little energy  
-Q5 - Poor appetite or overeating  
-Q6 - Feeling bad about yourself  
-Q7 - Trouble concentrating on things  
-Q8 - Moving or speaking slow or too fast or fidgety and restless  
-Q9 - Thought you would be better off dead or of hurting yourself  
-Q10 - Difficulty these problems have caused (not at all, somewhat, very, extremely)  
-
-# Dependent Variable
-MHI_Index: In order to quantify one's mental health or depressive symptoms, I created a mental health index (MHI), which is a cumulative score of ten depression screener questionnaires. I subsetted the dataset to only people who have answered to have been bothered by feeling depressed or hopeless at any degree, because I'm interested in learning how mild depressive symptoms progress to be fatal. Final dataset included 1,222 people.  
+This is overall distribution of MHI within our subset.
 
 ![MHI_distribution](/PNG/MHI_distributionn.png)  
-Distribution of MHI within a subset
+Distribution of MHI within a subset, which shows that most of the participants were at around 5 points. To recap, high MHI score indicates higher reported score of depression screener. Most people who answered these 10 questions reported MHI of 0 (not included in the analysis).
+
+![Age and Gender](/PNG/age_gender_sm.png)  
+
+Our group had 59% of female, and relatively evenly distributed age ranges from 18 to 70s, and some elders above 80.
+
 
 # Independent Variables
+Based on exploratory analysis and my experience at suicide prevention center, I focused on three broad topics: Demographics, existing medical condition (some of which I call the ‘hopelessness’ measure), and substance use. 
+
 ## Demographics
 ### Age & Gender
 age, gender: Survey age was capped at 80, meaning age of anyone older was inputted as 80. To adapt to this, I added some noise to this data by dispersing the data with age 80 to be random integer between 80 to 90. 59% was female. 
-
-![Age and Gender](/PNG/age_gender_sm.png)  
 
 
 ### Number of Household Members & Number of adults
