@@ -113,24 +113,24 @@ Instead of using a dummy, I made a baseline model by fitting preprocessed demogr
 
 ### Feature Selection
 #### 1. As is / Dropping multicollinearity measures manually
-Train-Test-Split results improved some from baseline.
+Train-Test-Split results improved some from baseline.  
 Train R2: 0.164599799643526  
 Test R2: 0.14995473970717976  
 
-I also rann adjusted R-squared on the entire dataset as the purpose is more analytic than prediction.  
-Adjusted R2: 0.146
+I also ran adjusted R-squared on the entire dataset as the purpose is more analytic than prediction.   
+Adjusted R2: 0.146  
 
 #### 2. Recursive Feature Elimination (RFE)
-Train data improved but test data didn't from as is model. But adjusted R2 was slightly higher. For this reason I chose this as a final model.
-Train R2: 0.16772477909317296  
-Test R2: 0.14011221042122435   
+Train data improved but test data didn't from as is model. But adjusted R2 was slightly higher. For this reason I chose this as a final model.  
+Train R2: 0.16772477909317296   
+Test R2: 0.14011221042122435    
 
 Adjusted R2: 0.150
 
 #### 3. Variance Inflation Factor (VIF)
-Test performance was much worse.  
-Train R2: 0.16481350361134806
-Test R2: -1.2452051215043353e+19
+Test performance was much worse.   
+Train R2: 0.16481350361134806  
+Test R2: -1.2452051215043353e+19  
 
 Adjusted R2: 0.147
 
@@ -138,7 +138,7 @@ Adjusted R2: 0.147
 Alternative functions are in the jupyter notebook. However I did not utilize these methods in the evaluation.  
 
 ## Final Model
-After taking RFE to select features, I iteratively removed the feature with the highest p-value as long as it contributed to the goodness of fit (Using adjusted R2). Led to a final model with Adjust R2 = 1.56 / R2 = 0.167. Final features and coefficients are reported here. (For a full summary, please refer to Jupyter notebook.)  
+After taking RFE to select features, I iteratively removed the feature with the highest p-value as long as it contributed to the goodness of fit (Using adjusted R2). Led to a final model with Adjusted R2 = 1.56 / R2 = 0.167. Final features with p > 0.05and coefficients are reported here. (For a full summary, please refer to Jupyter notebook.)  
 
 | Variable  | Coef | p |  
 | ------------- | ------------- | ----- |
