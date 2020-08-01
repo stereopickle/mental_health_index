@@ -56,8 +56,8 @@ total_household, n_adults, n_dependents, only_adult: From my experience from sui
 income_avg, income_p_household: Tiered incomes was inputted as mean value of the tier interval. There was correlation between income and MH_Index. For the fit, log transformed data was used. Additionally I included a new feature income / adults and income / household.
 
 ### Marital Status
-marital_st: Married, widowed, divorced, separated, single, living with partner. 
-WDS_marital: binary. widowed, divorced, separated
+marital_st: Married, widowed, divorced, separated, single, living with partner.   
+WDS_marital: binary. widowed, divorced, separated  
 They didn't have much direct relationship to MH_Index, but interaction with WDS showed some trend in grouping these variables. (See Interaction)  
 
 ### Veterans
@@ -78,7 +78,7 @@ Two-sample t-test showed that there is a significant difference in MHI between h
 cancer: binary (have diagnosed cancer or not)  
 Also to test what I called 'hopelessness' measure earlier, I added cancer_d_yr (year diagnosed cancer) and yr_since_cancer (age - cancer_d_yr).  
 
-## Substance Abuse
+## Substance Use
 Some research suggested that tobacco smoking is a risk factor for depression. I wanted to explore more. 
 ### Smoker
 smoker: smoker, nonsmoker, quitter, occasional smoker  
