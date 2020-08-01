@@ -93,7 +93,7 @@ heroine: ever used heroine
 n_meth: number of time used Methamphetamine  
 
 ## Interaction
-### Only Adult X Number of Household
+### Marrital Status X Age
 NeverMarriedXAge: Kruskal Wallis test looking at if the MH_Index is different between different number of adults in the household showed that there are significant difference between number of adults (one or more of the pairs at least) at the significance level of 0.05. (p< 0.05) Based on this result, I also included interaction between being only adult and number of total household. Having the interaction in the model, being only adult yielded high coefficient at p-value < 0.01. 
 
 ### WDS X Age
